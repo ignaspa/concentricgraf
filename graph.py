@@ -36,10 +36,16 @@ class CircleGraph:
         pygame.display.set_caption("hello world")
         screen.fill(white)
         pygame.display.update()
+        screen.fill(white)
         pygame.display.flip()
-        while True:
-            pass
-        clock.tick(60)
+        
+        running = True
+
+        while running:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
+
         pygame.quit()
         # for w in range(len(self.cat)):
         #     for k in range(len(self.num_el)):
