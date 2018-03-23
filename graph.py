@@ -60,41 +60,61 @@ class CircleGraph:
         screen.fill(white)
 
 
-        #distance from center, increased by thickness for each ring
+        #distance from center, increased by thickness for each ring.
+        #once we have the coordinates of the enclosing box, this distance
+        #times 2 will be the dimensions of the enclosing box.
         min = ICR
 
-        #enclosing box coordinates, because of the way pygame does the arc draw
-        eb = square/2 - min
-        #also, this is one variable because since it is a circle it
-        # will be the same for height and width like a square
 
-        #each ring
+        #enclosing box coordinates, because of the way pygame does the arc draw,
+        #it draws the arc from "start degree" to "end degree" as if it
+        #were part of the circle within this square.
+        #also, this is one variable because since it is a circle it
+        #will be the same for height and width like a square
+        eb = square/2 - min
+
+
+        #each ring, ie category or HPAclass
         for w in self.cat:
 
             #each gene in the ring
             for k in range(len(self.el)):
 
                 #if the element has that attribute
-                #in this case if the gene is in that class
+                #in this case if the gene is in that class...
                 if self.el[k] in self.cat[w]:
                     color = darkBlue
-                #if it isn't in that class
+
+                #if it isn't in that class...
                 else:
                     color = pink
 
                 #draw slice
+                # (arc takes as follows: screen, color, enclosing box
+                #  box coordinates and dimensions, start radius, end radius,
+                #  and lastly thickness)
                 pygame.draw.arc(screen, color,
                                 (eb,eb,min*2,min*2),
                                 dps*k, (dps * (k + 1)) + .1, thickness)
-                print(str(dps*k) + " " + str(dps*(k+1)))
+                # k is the slice, ie gene, the arc is in the instance
+
+                #print(str(dps*k) + " " + str(dps*(k+1)))
+
+
+
                 #draw slice border
                 # pygame.draw.arc(screen, black,
                 #                 (eb,eb,min*2,min*2),
                 #                 (dps * (k + 1)) - 1, (dps * (k + 1)), thickness)
 
-            #
+            #this should move the enclosing box coordinates back for another
+            #ring, and accordingly increase the dimensions of the box
             min = min + thickness
             eb = eb - thickness
+
+
+
+        #more pygame draw display stuff
         pygame.display.update()
         pygame.display.flip()
 

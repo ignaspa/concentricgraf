@@ -3,6 +3,7 @@ context:
 This is a project I worked on to help create a new type
 of data visualization with a group for BCB BioHacks 2018. (a hackathon put on by
 the BioInformatics and Computational Biology Department at U of T)
+https://github.com/uoftbiohacks/2018-Challenge
 
 objective:
 We were given a lot of data on chromosome20 of the human
@@ -30,3 +31,6 @@ my part:
 I tried to implement the visualization using the python module pygame.
 It turns out pygame was probably not the way to go (learning the har way!)
 The arcs are gross, but the idea is still there.
+
+TEAM MEMBERS:
+Sid Gopalan, John Chen, Bruno Pereira, Ben Prystawski
