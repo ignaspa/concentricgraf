@@ -18,7 +18,9 @@ genes and each ring would be a characteristic class that the gene may have
 attributed to it. If the gene did have an attribute the slice of that
 corresponding ring would be a color denoting it, and if not, then another color.
 Futhermore we would use scikitlearn for principal component analysis (PCA)
+
 http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html
+
 to reduce the genes to a dimension of similarity, and then
 have similar genes closer to each other on the circle. This is then a linear
 form of comparison and so there must be a break/end point in the circle,
@@ -27,4 +29,4 @@ they cannot "loop in similarity".
 my part:
 I tried to implement the visualization using the python module pygame.
 It turns out pygame was probably not the way to go (learning the har way!)
-The arcs are gross, but the idea is still there. 
+The arcs are gross, but the idea is still there.
