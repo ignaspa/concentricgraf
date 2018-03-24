@@ -96,7 +96,11 @@ class CircleGraph:
                 pygame.draw.arc(screen, color,
                                 (eb,eb,min*2,min*2),
                                 dps*k, (dps * (k + 1)) + .1, thickness)
-                # k is the slice, ie gene, the arc is in the instance
+                # k is the slice, ie gene, the arc is in the instance. the +.1
+                # is a fudge factor which I added late. Basically, pygame is
+                # actually quite bad at drawing, so the .1 makes the arc visible
+                # and it only messes up the last gene's and the first gene's
+                # since there is some overlap between them. To be solved.
 
                 #print(str(dps*k) + " " + str(dps*(k+1)))
 
